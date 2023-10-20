@@ -5,19 +5,19 @@
 package view;
 
 import javax.swing.table.DefaultTableModel;
-import model.dao.VagaDAO;
-import model.bean.Vaga;
+import model.bean.Motorista;
+import model.dao.MotoristaDAO;
 
 /**
  *
- * @author 02209066026
+ * @author lucia
  */
-public class JFListarVagas extends javax.swing.JFrame {
+public class JFListarMotoristas extends javax.swing.JFrame {
 
     /**
-     * Creates new form JFListarVagas
+     * Creates new form JFListarMotoristas
      */
-    public JFListarVagas() {
+    public JFListarMotoristas() {
         initComponents();
     }
 
@@ -32,7 +32,7 @@ public class JFListarVagas extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTVaga = new javax.swing.JTable();
+        jTMotorista = new javax.swing.JTable();
         jBtnCadastrar = new javax.swing.JButton();
         jBtnAlterar = new javax.swing.JButton();
         jBtnExcluir = new javax.swing.JButton();
@@ -45,9 +45,9 @@ public class JFListarVagas extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setText("Listar Vagas");
+        jLabel1.setText("Listar Motoristas");
 
-        jTVaga.setModel(new javax.swing.table.DefaultTableModel(
+        jTMotorista.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -55,39 +55,16 @@ public class JFListarVagas extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "ID da Vaga", "Número", "Rua", "Oblíqua"
+                "ID do Motorista", "Nome", "CPF", "Celular"
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
+        ));
+        jScrollPane1.setViewportView(jTMotorista);
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(jTVaga);
+        jBtnCadastrar.setText("Cadastrar");
 
-        jBtnCadastrar.setText("Cadastrar Vaga");
-        jBtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnCadastrarActionPerformed(evt);
-            }
-        });
+        jBtnAlterar.setText("Alterar");
 
-        jBtnAlterar.setText("Alterar Vaga");
-        jBtnAlterar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnAlterarActionPerformed(evt);
-            }
-        });
-
-        jBtnExcluir.setText("Excluir Vaga");
-        jBtnExcluir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnExcluirActionPerformed(evt);
-            }
-        });
+        jBtnExcluir.setText("Excluir");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -96,17 +73,17 @@ public class JFListarVagas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jBtnCadastrar)
-                                .addGap(33, 33, 33)
+                                .addGap(35, 35, 35)
                                 .addComponent(jBtnAlterar)
-                                .addGap(39, 39, 39)
+                                .addGap(36, 36, 36)
                                 .addComponent(jBtnExcluir)))
-                        .addGap(0, 31, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -115,49 +92,40 @@ public class JFListarVagas extends javax.swing.JFrame {
                 .addGap(14, 14, 14)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBtnCadastrar)
                     .addComponent(jBtnAlterar)
                     .addComponent(jBtnExcluir))
-                .addGap(14, 14, 14))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jBtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCadastrarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBtnCadastrarActionPerformed
-
-    private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBtnAlterarActionPerformed
-
-    private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBtnExcluirActionPerformed
-
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-       readJTable();
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formWindowOpened
+     readJTable();
     
+    }//GEN-LAST:event_formWindowOpened
+                             
+
     public void readJTable(){
-        DefaultTableModel modelo = (DefaultTableModel) jTVaga.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) jTMotorista.getModel();
         modelo.setNumRows(0);
         
-        VagaDAO dao = new VagaDAO();
-        for(Vaga v: dao.read()){
+        MotoristaDAO dao = new MotoristaDAO();
+        for(Motorista m: dao.read()){
             modelo.addRow(new Object[]{
-                v.getIdVaga(),
-                v.getNumero(),
-                v.getRua(),
-                v.isObliqua()
+                m.getIdMotorista(),
+                m.getNomeCompleto(),
+                m.getCpf(),
+                m.getCelular()
             });
+            
         }
-    }
+}
+    
     
     /**
      * @param args the command line arguments
@@ -176,20 +144,20 @@ public class JFListarVagas extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFListarVagas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFListarMotoristas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFListarVagas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFListarMotoristas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFListarVagas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFListarMotoristas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFListarVagas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFListarMotoristas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFListarVagas().setVisible(true);
+                new JFListarMotoristas().setVisible(true);
             }
         });
     }
@@ -200,6 +168,6 @@ public class JFListarVagas extends javax.swing.JFrame {
     private javax.swing.JButton jBtnExcluir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTVaga;
+    private javax.swing.JTable jTMotorista;
     // End of variables declaration//GEN-END:variables
 }
