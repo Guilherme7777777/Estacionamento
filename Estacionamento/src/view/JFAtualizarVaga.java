@@ -200,6 +200,7 @@ public class JFAtualizarVaga extends javax.swing.JFrame {
 
         Vaga v = new Vaga();
         VagaDAO dao = new VagaDAO();
+        v.setIdVaga(Integer.parseInt(jLblIdVaga.getText()));
         v.setNumero(Integer.parseInt(jTFNumero.getText()));
         v.setRua(jTFRua.getText());
         if(jRBObliqua.isSelected()){
@@ -207,7 +208,7 @@ public class JFAtualizarVaga extends javax.swing.JFrame {
         }else if(jRBParalela.isSelected()){
             v.setObliqua(false);
         }
-        dao.create(v);
+        dao.update(v);
 
     }//GEN-LAST:event_jBtnSalvarActionPerformed
 

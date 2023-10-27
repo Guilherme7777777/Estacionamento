@@ -91,7 +91,7 @@ public class JFCadastrarVaga extends javax.swing.JFrame {
                 jBtnSalvarActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, -1, -1));
+        getContentPane().add(jBtnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, -1, -1));
 
         jBtnLimpar.setText("Limpar");
         jBtnLimpar.addActionListener(new java.awt.event.ActionListener() {
@@ -99,10 +99,10 @@ public class JFCadastrarVaga extends javax.swing.JFrame {
                 jBtnLimparActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 370, -1, -1));
+        getContentPane().add(jBtnLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, -1, -1));
 
         jBtnCancelar.setText("Cancelar");
-        getContentPane().add(jBtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 370, -1, -1));
+        getContentPane().add(jBtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
