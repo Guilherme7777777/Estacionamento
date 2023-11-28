@@ -11,7 +11,7 @@ import model.bean.Motorista;
 
 /**
  *
- * @author lucia
+
  */
 public class JFListarMotoristas extends javax.swing.JFrame {
 

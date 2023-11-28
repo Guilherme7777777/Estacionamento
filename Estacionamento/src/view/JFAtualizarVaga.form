@@ -77,15 +77,10 @@
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
+                  <EmptySpace min="10" pref="45" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="10" pref="45" max="32767" attributes="0"/>
-                          <Component id="jTFNumero" min="-2" pref="440" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="10" pref="45" max="32767" attributes="0"/>
-                          <Component id="jTFRua" min="-2" pref="440" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jTFNumero" alignment="1" min="-2" pref="440" max="-2" attributes="0"/>
+                      <Component id="jTFRua" alignment="1" min="-2" pref="440" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="36" max="32767" attributes="0"/>
               </Group>

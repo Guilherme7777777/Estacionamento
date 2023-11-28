@@ -10,7 +10,7 @@ import model.dao.MotoristaDAO;
 
 /**
  *
- * @author lucia
+
  */
 public class JFAtualizarMotorista extends javax.swing.JFrame {
     private static int idMotorista;

@@ -8,7 +8,7 @@ import model.bean.Vaga;
 import model.dao.VagaDAO;
 /**
  *
- * @author lucia
+ * 
  */
 public class JFAtualizarVaga extends javax.swing.JFrame {
     private static int idVaga;

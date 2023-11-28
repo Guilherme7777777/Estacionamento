@@ -10,8 +10,7 @@ import model.dao.VagaDAO;
 import model.bean.Vaga;
 
 /**
- *
- * @author lucia
+
  */
 public class JFListarVagas extends javax.swing.JFrame {
 
