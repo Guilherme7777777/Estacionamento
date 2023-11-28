@@ -1,7 +1,5 @@
 package model.bean;
 
-
-
 public class Vaga {
     private int idVaga;
     private int numero;
@@ -41,5 +39,4 @@ public class Vaga {
     }
     
     
-        
 }

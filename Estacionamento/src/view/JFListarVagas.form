@@ -29,19 +29,19 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane1" alignment="0" pref="0" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="0" pref="388" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" pref="107" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jBtnCadastrar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jBtnAlterar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jBtnExcluir" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="31" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -54,14 +54,14 @@
               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" pref="273" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="277" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jBtnCadastrar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jBtnAlterar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jBtnExcluir" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+              <EmptySpace pref="23" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -87,7 +87,7 @@
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="4" rowCount="4">
                 <Column editable="false" title="ID da Vaga" type="java.lang.Object"/>
-                <Column editable="false" title="N&#xfa;mero" type="java.lang.Object"/>
+                <Column editable="false" title="N&#xfa;mero " type="java.lang.Object"/>
                 <Column editable="false" title="Rua" type="java.lang.Object"/>
                 <Column editable="false" title="Obl&#xed;qua" type="java.lang.Object"/>
               </Table>
@@ -98,7 +98,7 @@
     </Container>
     <Component class="javax.swing.JButton" name="jBtnCadastrar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Cadastrar Vaga"/>
+        <Property name="text" type="java.lang.String" value="Cadastrar"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnCadastrarActionPerformed"/>
@@ -106,7 +106,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="jBtnAlterar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Alterar Vaga"/>
+        <Property name="text" type="java.lang.String" value="Alterar"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnAlterarActionPerformed"/>
@@ -114,7 +114,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="jBtnExcluir">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Excluir Vaga"/>
+        <Property name="text" type="java.lang.String" value="Excluir "/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnExcluirActionPerformed"/>

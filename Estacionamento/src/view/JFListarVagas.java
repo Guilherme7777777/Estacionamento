@@ -11,7 +11,7 @@ import model.bean.Vaga;
 
 /**
  *
- * @author 02209066026
+ * @author lucia
  */
 public class JFListarVagas extends javax.swing.JFrame {
 
@@ -56,7 +56,7 @@ public class JFListarVagas extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "ID da Vaga", "Número", "Rua", "Oblíqua"
+                "ID da Vaga", "Número ", "Rua", "Oblíqua"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -69,21 +69,21 @@ public class JFListarVagas extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTVaga);
 
-        jBtnCadastrar.setText("Cadastrar Vaga");
+        jBtnCadastrar.setText("Cadastrar");
         jBtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnCadastrarActionPerformed(evt);
             }
         });
 
-        jBtnAlterar.setText("Alterar Vaga");
+        jBtnAlterar.setText("Alterar");
         jBtnAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnAlterarActionPerformed(evt);
             }
         });
 
-        jBtnExcluir.setText("Excluir Vaga");
+        jBtnExcluir.setText("Excluir ");
         jBtnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnExcluirActionPerformed(evt);
@@ -97,17 +97,17 @@ public class JFListarVagas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jBtnCadastrar)
-                                .addGap(33, 33, 33)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jBtnAlterar)
-                                .addGap(39, 39, 39)
+                                .addGap(18, 18, 18)
                                 .addComponent(jBtnExcluir)))
-                        .addGap(0, 31, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -116,13 +116,13 @@ public class JFListarVagas extends javax.swing.JFrame {
                 .addGap(14, 14, 14)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBtnCadastrar)
                     .addComponent(jBtnAlterar)
                     .addComponent(jBtnExcluir))
-                .addGap(14, 14, 14))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
@@ -132,29 +132,27 @@ public class JFListarVagas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jBtnCadastrarActionPerformed
 
-    private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
-        if(jTVaga.getSelectedRow()!= -1){
-            int vagaSelecionada = (int)jTVaga.getValueAt(jTVaga.getSelectedRow(), 0);
-            JFAtualizarVaga av = new JFAtualizarVaga(vagaSelecionada);
-            av.setVisible(true);
-        }else{
-            JOptionPane.showMessageDialog(null,"Selecione uma vaga!","Erro",
-                    JOptionPane.ERROR_MESSAGE);
-        }
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         readJTable();
-        
-        
+    }//GEN-LAST:event_formWindowOpened
+
+    private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
+    if(jTVaga.getSelectedRow()!= -1){
+        int vagaSelecionada = (int)jTVaga.getValueAt(jTVaga.getSelectedRow(), 0);
+        JFAtualizarVaga av = new JFAtualizarVaga(vagaSelecionada);
+        av.setVisible(true);
+    }else{
+        JOptionPane.showMessageDialog(null, "Selecione uma vaga!", "Erro",
+                JOptionPane.ERROR_MESSAGE);
+
+    }
+    readJTable();
     }//GEN-LAST:event_jBtnAlterarActionPerformed
 
     private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jBtnExcluirActionPerformed
 
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-       readJTable();
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formWindowOpened
-    
     public void readJTable(){
         DefaultTableModel modelo = (DefaultTableModel) jTVaga.getModel();
         modelo.setNumRows(0);
@@ -167,6 +165,7 @@ public class JFListarVagas extends javax.swing.JFrame {
                 v.getRua(),
                 v.isObliqua()
             });
+            
         }
     }
     

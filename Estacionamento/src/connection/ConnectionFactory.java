@@ -13,47 +13,43 @@ public class ConnectionFactory {
     private static final String PASS = "";
     
     public static Connection getConnection(){
-        try{
+        try {
             Class.forName(DRIVER);
             return DriverManager.getConnection(URL, USER, PASS);
-        }catch(ClassNotFoundException | SQLException e){
+        }catch(ClassNotFoundException | SQLException e) {
             throw new RuntimeException ("Erro na conexão: ", e);
         }
-        
     }
     
     public static void closeConnection(Connection con){
-        try{
-            if(con != null){
+        try {
+            if (con != null) {
                 con.close();
             }
-        }catch(SQLException e){
-            throw new RuntimeException("ERRo ao encerrar a conexão: ", e);
+        }catch (SQLException e) {
+            throw new RuntimeException("Erro ao encerrar a conexão: ", e);
         }
-    
-    }
+    }    
     
     public static void closeConnection(Connection con, PreparedStatement stmt){
         closeConnection(con);
-        try{
-            if(stmt != null){
+        try {
+            if (stmt != null) {
                 stmt.close();
             }
-        }catch(SQLException e){
-            throw new RuntimeException("ERRo ao encerrar a conexão: ", e);
+        }catch (SQLException e) {
+            throw new RuntimeException("Erro ao encerrar a conexão: ", e);
         }
-    
-    }
+    }    
     
     public static void closeConnection(Connection con, PreparedStatement stmt, ResultSet rs){
         closeConnection(con, stmt);
-        try{
-            if(rs != null){
+        try {
+            if (rs != null) {
                 rs.close();
             }
-        }catch(SQLException e){
-            throw new RuntimeException("ERRo ao encerrar a conexão: ", e);
+        }catch (SQLException e) {
+            throw new RuntimeException("Erro ao encerrar a conexão: ", e);
         }
-    
-    }
+    }    
 }

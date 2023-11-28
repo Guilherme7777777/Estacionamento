@@ -6,9 +6,10 @@ package view;
 
 import model.bean.Vaga;
 import model.dao.VagaDAO;
+
 /**
  *
- * @author 02209066026
+ * @author lucia
  */
 public class JFCadastrarVaga extends javax.swing.JFrame {
 
@@ -31,10 +32,10 @@ public class JFCadastrarVaga extends javax.swing.JFrame {
         jBGVaga = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jRBObliqua = new javax.swing.JRadioButton();
         jRBParalela = new javax.swing.JRadioButton();
+        jRBObliqua = new javax.swing.JRadioButton();
         jTFNumero = new javax.swing.JTextField();
         jTFRua = new javax.swing.JTextField();
         jBtnSalvar = new javax.swing.JButton();
@@ -48,25 +49,16 @@ public class JFCadastrarVaga extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("Cadastrar Vaga");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 130, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 160, 40));
 
         jLabel2.setText("Número");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, -1, -1));
 
-        jLabel3.setText("Rua");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+        jLabel4.setText("Rua");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, -1, -1));
 
-        jLabel6.setText("Tipo de Vaga");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, 20));
-
-        jBGVaga.add(jRBObliqua);
-        jRBObliqua.setText("Oblíqua");
-        jRBObliqua.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRBObliquaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jRBObliqua, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
+        jLabel6.setText("Tipo de vaga");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
         jBGVaga.add(jRBParalela);
         jRBParalela.setText("Paralela");
@@ -77,13 +69,28 @@ public class JFCadastrarVaga extends javax.swing.JFrame {
         });
         getContentPane().add(jRBParalela, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
 
+        jBGVaga.add(jRBObliqua);
+        jRBObliqua.setText("Oblíqua");
+        jRBObliqua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRBObliquaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jRBObliqua, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
+
         jTFNumero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTFNumeroActionPerformed(evt);
             }
         });
-        getContentPane().add(jTFNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 460, -1));
-        getContentPane().add(jTFRua, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 460, -1));
+        getContentPane().add(jTFNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 440, -1));
+
+        jTFRua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTFRuaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTFRua, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 440, -1));
 
         jBtnSalvar.setText("Salvar");
         jBtnSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -91,18 +98,13 @@ public class JFCadastrarVaga extends javax.swing.JFrame {
                 jBtnSalvarActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, -1, -1));
+        getContentPane().add(jBtnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
 
         jBtnLimpar.setText("Limpar");
-        jBtnLimpar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnLimparActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jBtnLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, -1, -1));
+        getContentPane().add(jBtnLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, -1, -1));
 
         jBtnCancelar.setText("Cancelar");
-        getContentPane().add(jBtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, -1, -1));
+        getContentPane().add(jBtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -115,16 +117,16 @@ public class JFCadastrarVaga extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jRBParalelaActionPerformed
 
-    private void jBtnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnLimparActionPerformed
+    private void jTFRuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFRuaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jBtnLimparActionPerformed
+    }//GEN-LAST:event_jTFRuaActionPerformed
 
     private void jTFNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFNumeroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTFNumeroActionPerformed
 
     private void jBtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSalvarActionPerformed
-        
+
         Vaga v = new Vaga();
         VagaDAO dao = new VagaDAO();
         v.setNumero(Integer.parseInt(jTFNumero.getText()));
@@ -135,7 +137,10 @@ public class JFCadastrarVaga extends javax.swing.JFrame {
             v.setObliqua(false);
         }
         dao.create(v);
-        
+
+
+
+        // TODO add your handling code here:
     }//GEN-LAST:event_jBtnSalvarActionPerformed
 
     /**
@@ -180,7 +185,7 @@ public class JFCadastrarVaga extends javax.swing.JFrame {
     private javax.swing.JButton jBtnSalvar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JRadioButton jRBObliqua;
     private javax.swing.JRadioButton jRBParalela;
